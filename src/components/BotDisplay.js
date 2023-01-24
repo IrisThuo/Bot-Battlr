@@ -9,48 +9,47 @@ const botTypeClasses = {
   Captain: "icon star"
 }
 
-function BotDisplay (props){
-  
-
-
+function BotDisplay ({ bot, botFunction }){
   return (
     <div className="ui column">
       <div
         className="ui card"
-        key={props.bot.id}
-        onClick={props.botFunction(props.bot)}
+        key={bot.id}
+        onClick={() => botFunction(bot)}
       >
         <div className="image">
-          <img alt="bot avatar" src={props.bot.avatar_url} />
+          <img alt="oh no!" src={bot.avatar_url} />
         </div>
         <div className="content">
           <div className="header">
-            {props.bot.name}
-            <i className={botTypeClasses[props.bot.bot_class]} />
+            {bot.name}
+            <i className={botTypeClasses[bot.bot_class]} />
           </div>
           <div className="meta text-wrap">
-            <small>{props.bot.catchphrase}</small>
+            <small>{bot.catchphrase}</small>
           </div>
         </div>
         <div className="extra content">
           <span>
             <i className="icon heartbeat" />
-            {props.bot.health}
+            {bot.health}
           </span>
 
           <span>
             <i className="icon lightning" />
-            {props.bot.damage}
+            {bot.damage}
           </span>
           <span>
             <i className="icon shield" />
-            {props.bot.armor}
+            {bot.armor}
           </span>
           <span>
             <div className="ui center aligned segment basic">
               <button
                 className="ui mini red button"
-                onClick={props.removeBot(props.bot)}
+                onClick={() =>
+                  console.log("add code to connect event listener")
+                }
               >
                 x
               </button>
@@ -58,8 +57,8 @@ function BotDisplay (props){
           </span>
         </div>
       </div>
-    </div >
-  )
+    </div>
+  );
 }
 
 export default BotDisplay

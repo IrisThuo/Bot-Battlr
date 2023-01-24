@@ -3,7 +3,7 @@ import BotDisplay from './BotDisplay'
 
 function BotCollection(props) {
  
-  const displayBots = props.displayBots.map((bot) => {
+  const bots = props.bots.map((bot) => {
     return <BotDisplay key={bot.id} bot={bot} botFunction={props.botFunction}/>
   })
 
@@ -11,10 +11,11 @@ function BotCollection(props) {
     <div className="ui four column grid">
       <div className="row">
         
-        {displayBots}
+        {bots}
       </div>
     </div>
   );
 }
+
 
 export default BotCollection;
