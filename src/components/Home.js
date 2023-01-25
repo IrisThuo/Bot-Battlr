@@ -10,7 +10,7 @@ function Home(){
 
   useEffect(() => {
    
-    fetch("http://localhost:3000/bots")
+    fetch("https://api.npoint.io/632392ed415b43e49c52")
       .then((r) => r.json())
       .then((bots) => setBots(bots));
   }, []);
