@@ -10,7 +10,7 @@ function Home(){
 
   useEffect(() => {
    
-    fetch("https://api.npoint.io/632392ed415b43e49c52")
+    fetch("https://api.npoint.io/34e96a5f4423d0be7fc1/bots/")
       .then((r) => r.json())
       .then((bots) => setBots(bots));
   }, []);
